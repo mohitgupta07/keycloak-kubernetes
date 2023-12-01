@@ -3,6 +3,13 @@
 #Set namespace to suit your requirements
 namespace=hotel
 
+docker login
+# start minikube
+minikube start
+minikube addons enable ingress
+# prerequisites
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm install ingress-nginx -n ingress-nginx --create-namespace ingress-nginx/ingress-nginx
 
